@@ -1,0 +1,50 @@
+*.class
+
+*.war
+*.ear
+
+.gradle
+.gradletasknamecache
+gradlew.bat
+build/
+**/build/
+**/bin/
+
+/out
+.DS_Store
+.idea
+*.ipr
+*.iws
+*.iml
+*.swp
+
+node_modules/
+
+######################
+# Eclipse
+######################
+ 
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+ 
+# Locally stored "Eclipse launch configurations"
+*.launch
+ 
+# CDT-specific
+.cproject
+ 
+# PDT-specific
+.buildpath
