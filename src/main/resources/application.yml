@@ -1,0 +1,6 @@
+connector:
+  https:
+    enabled: true
+    keystoreFile:
+    keystorePass:
+    keyAlias:

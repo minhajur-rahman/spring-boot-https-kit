@@ -24,9 +24,10 @@ public class TomcatConfig {
 
   @Bean
   public EmbeddedServletContainerCustomizer containerCustomizer(
-      @Value("${connector.attribute.keystoreFile}") Resource keystoreFile,
-      @Value("${connector.attribute.keystorePass}") String keystorePass,
-      @Value("${connector.attribute.keyAlias") String keyAlias) {
+      @Value("${connector.https.enabled") Boolean httpsEnabled,
+      @Value("${connector.https.keystoreFile}") Resource keystoreFile,
+      @Value("${connector.https.keystorePass}") String keystorePass,
+      @Value("${connector.https.keyAlias") String keyAlias) {
 
     //refer to:
     //http://docs.spring.io/spring-boot/docs/1.0.2.RELEASE/reference/htmlsingle/#howto-terminate-ssl-in-tomcat
