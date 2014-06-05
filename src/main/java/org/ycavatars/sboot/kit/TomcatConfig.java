@@ -22,7 +22,7 @@ public class TomcatConfig {
 
   private static final Logger logger = LoggerFactory.getLogger(TomcatConfig.class);
 
-  @Bean
+  @Bean(name = "tomcatCustomizer")
   public EmbeddedServletContainerCustomizer containerCustomizer(
       @Value("${connector.https.enabled") Boolean httpsEnabled,
       @Value("${connector.https.keystoreFile}") Resource keystoreFile,
