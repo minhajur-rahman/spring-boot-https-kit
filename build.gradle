@@ -21,13 +21,13 @@ group = 'org.ycavatars.sboot.kit'
 version = '0.1.0'
 
 compileJava {
-    sourceCompatibility=1.6
-    targetCompatibility=1.6
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
 
 compileTestJava {
-    sourceCompatibility=1.8
-    targetCompatibility=1.8
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
 
 // In this section you declare the dependencies for your production and test code
