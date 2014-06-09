@@ -1,3 +1,8 @@
+spring:
+  profiles: integration-test
+server:
+  #random port
+  port: 0
 connector:
   https:
     enabled: true
@@ -5,6 +10,6 @@ connector:
     # use file:/, classpath: ... to specify your resource.
     # Read this doc to get more informations.
     # http://docs.spring.io/spring/docs/4.1.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#resources
-    keystoreFile:
-    keystorePass:
-    keyAlias:
+    keystoreFile: classpath:test-https.p12
+    keystorePass: test-https
+    keyAlias: test-https

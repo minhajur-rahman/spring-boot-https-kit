@@ -23,38 +23,36 @@ public class TomcatConfig {
   private static final Logger logger = LoggerFactory.getLogger(TomcatConfig.class);
 
   @Bean(name = "tomcatCustomizer")
-  public EmbeddedServletContainerCustomizer containerCustomizer(
-      @Value("${connector.https.enabled") Boolean httpsEnabled,
-      @Value("${connector.https.keystoreFile}") final Resource keystoreFile,
-      @Value("${connector.https.keystorePass}") final String keystorePass,
-      @Value("${connector.https.keyAlias") final String keyAlias) {
-
-    if (!httpsEnabled) {
-      return new EmbeddedServletContainerCustomizer() {
-        @Override public void customize(ConfigurableEmbeddedServletContainer container) {
-          //do nothing
-        }
-      };
-    }
-
-    EmbeddedServletContainerCustomizer tomcatCustomizer = new EmbeddedServletContainerCustomizer() {
+  public EmbeddedServletContainerCustomizer containerCustomizer() {
+    return new EmbeddedServletContainerCustomizer() {
       @Override public void customize(ConfigurableEmbeddedServletContainer container) {
         if (container instanceof TomcatEmbeddedServletContainerFactory) {
           TomcatEmbeddedServletContainerFactory tomcatFactory =
               (TomcatEmbeddedServletContainerFactory) container;
-          tomcatFactory.addConnectorCustomizers(
-              sslConnectorCustomizer(keystoreFile, keystorePass, keyAlias));
+          tomcatFactory.addConnectorCustomizers(sslConnectorCustomizer());
         }
       }
     };
-
-    return tomcatCustomizer;
   }
 
-  protected TomcatConnectorCustomizer sslConnectorCustomizer(
-      final Resource keystoreFile,
-      final String keystorePass,
-      final String keyAlias) {
+  @Value("${connector.https.enabled}")
+  private Boolean httpsEnabled;
+  @Value("${connector.https.keystoreFile}")
+  private Resource keystoreFile;
+  @Value("${connector.https.keystorePass}")
+  private String keystorePass;
+  @Value("${connector.https.keyAlias}")
+  private String keyAlias;
+
+  @Bean(name = "tomcatSslConnectorCustomizer")
+  public TomcatConnectorCustomizer sslConnectorCustomizer() {
+
+    if (!httpsEnabled) {
+      return new TomcatConnectorCustomizer() {
+        @Override public void customize(Connector connector) {
+        }
+      };
+    }
 
     //refer to:
     //http://docs.spring.io/spring-boot/docs/1.0.2.RELEASE/reference/htmlsingle/#howto-terminate-ssl-in-tomcat

@@ -14,15 +14,20 @@ compileTestJava {
     targetCompatibility = 1.8
 }
 
+ext {
+    springBootVersion = '1.0.2.RELEASE'
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile 'com.google.guava:guava:17.0'
 
-    compile 'org.springframework.boot:spring-boot-starter:1.0.2.RELEASE'
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
     compile 'org.apache.tomcat.embed:tomcat-embed-core:7.0.54'
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
 
-    testCompile 'junit:junit'
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    testCompile 'org.apache.httpcomponents:fluent-hc:4.3.4'
 }
 
 repositories {
