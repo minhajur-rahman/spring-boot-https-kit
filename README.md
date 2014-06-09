@@ -1,10 +1,14 @@
 Spring Boot HTTPS Kit
 =====================
 
+Import this library to get HTTPS capability for your spring-boot application.
+
+I haven't deploy this to maven repo and I'll do that in these days.
+
 Getting Started
 ---------------
 
-You have to provide the following properties via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
+Enable component scan (`@ComponentScan("org.ycavatars.sboot.kit")`) and provide your keystore and configure these properties (via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
 
 * `connector.attribute.keystoreFile`
 * `connector.attribute.keystorePass`
@@ -12,6 +16,8 @@ You have to provide the following properties via [these ways](http://docs.spring
 
 Keytool
 -------
+
+If you don't know how to generate a keystore, read this section.
 
 You have to generates a key pair (a public key and associated private key) to
 enable HTTPS. Before you begin, it might be better for you to read these
