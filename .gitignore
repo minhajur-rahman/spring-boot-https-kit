@@ -1,4 +1,7 @@
+maven-publish.gradle
+
 *.p12
+
 *.class
 
 *.war
@@ -21,10 +24,7 @@ build/
 
 node_modules/
 
-######################
 # Eclipse
-######################
- 
 .project
 .metadata
 bin/**
