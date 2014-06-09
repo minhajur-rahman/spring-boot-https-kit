@@ -8,7 +8,7 @@ I haven't deploy this to maven repo and I'll do that in these days.
 Getting Started
 ---------------
 
-Enable component scan (`@ComponentScan("org.ycavatars.sboot.kit")`) and provide your keystore and configure these properties (via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
+Enable component scan (`@ComponentScan("org.ycavatars.sboot.kit")`) and provide your keystore and configure these properties via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
 
 * `connector.attribute.keystoreFile`
 * `connector.attribute.keystorePass`
