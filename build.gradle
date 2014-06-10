@@ -4,16 +4,6 @@ archivesBaseName = 'spring-boot-https-kit'
 group = 'org.ycavatars.sboot.kit'
 version = '0.1.1'
 
-compileJava {
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
-}
-
-compileTestJava {
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
-}
-
 ext {
     springBootVersion = '1.0.2.RELEASE'
 }
