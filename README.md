@@ -3,16 +3,22 @@ Spring Boot HTTPS Kit
 
 Import this library to get HTTPS capability for your spring-boot application.
 
-I haven't deploy this to maven repo and I'll do that in these days.
+Build
+-----
+
+If you don't want to test with your keystore, run `./gradlew clean build -x test` to exclude tests. Otherwise, [configure keystore proeprties](https://github.com/ycavatars/spring-boot-https-kit#getting-started) in `src/test/resources/application.yml` and execute `./gradlew clean build`. 
+
+The output folder is `build/libs`.
 
 Getting Started
 ---------------
 
-Enable component scan (`@ComponentScan("org.ycavatars.sboot.kit")`) and provide your keystore and configure these properties via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
+Import the library and enable component scan `@ComponentScan("org.ycavatars.sboot.kit")`, provide your keystore and configure these properties via [these ways](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config).
 
-* `connector.attribute.keystoreFile`
-* `connector.attribute.keystorePass`
-* `connector.attribute.keyAlias`
+* `connector.https.enabled`
+* `connector.https.keystoreFile`
+* `connector.https.keystorePass`
+* `connector.https.keyAlias`
 
 Keytool
 -------
